@@ -145,13 +145,13 @@ client.execute(get, new FutureCallback<HttpResponse>() { /* ... */ })
 
 #### 参数
 
-- `include=param1,param2,...` **指定包含返回值中的 `discussion` 对象的 `relationships` 包含哪些内容。**例如，指定 `include=user,lastPostedUser,tags,firstPost`，那么返回值的 `relationships` 项内就会包含这四项内容。
-- `filter[q]=?` **指定一个过滤器。**根据该过滤器来限制返回值。目前已知的过滤器有
+- `include=param1,param2,...` **指定包含返回值中的 `discussion` 对象的 `relationships` 包含哪些内容。** 例如，指定 `include=user,lastPostedUser,tags,firstPost`，那么返回值的 `relationships` 项内就会包含这四项内容。
+- `filter[q]=?` **指定一个过滤器。** 根据该过滤器来限制返回值。目前已知的过滤器有
   - `is:following` 正在关注的
   - `tag:tagname` 指定标签的
     例如指定 `filter[q]=tag:activity` 那么就只会返回 activity 标签下的内容。注意此处 `tag:tagname` 中的 `tagname` 是当初设置该 tag 时候写的英文名称（设置 tag 的时候会要求填一个标签名称和一个英文名称，标签名称是对外显示出来的，英文名称则用于此处）。
-- `page[limit]=?` **设置单页获取数限制。**由于此接口返回的是整个论坛按时间顺序排列的主题列表，如果主题数目较多，则需要分页。该值用于确定一页内获取多少个主题，默认情况下是 `20`，最大值是 `50`，超过 50 按 50 计。
-- `page[offset]=?` **设置页面偏移量。**利用此值可实现分页，此值应结合 `limit` 使用。此值代表从第一个主题开始要跳过的主题数量。例如指定 `page[offset]=50&page[limit]=50` 则代表从第 51 个主题开始，获取 50 个。再如指定 `page[offset]=200&page[limit]=2` 则代表从 201 个主题开始，获取 2 个，也就是获取第 201 和 202 个主题。
+- `page[limit]=?` **设置单页获取数限制。** 由于此接口返回的是整个论坛按时间顺序排列的主题列表，如果主题数目较多，则需要分页。该值用于确定一页内获取多少个主题，默认情况下是 `20`，最大值是 `50`，超过 50 按 50 计。
+- `page[offset]=?` **设置页面偏移量。** 利用此值可实现分页，此值应结合 `limit` 使用。此值代表从第一个主题开始要跳过的主题数量。例如指定 `page[offset]=50&page[limit]=50` 则代表从第 51 个主题开始，获取 50 个。再如指定 `page[offset]=200&page[limit]=2` 则代表从 201 个主题开始，获取 2 个，也就是获取第 201 和 202 个主题。
 
 提示：返回的数据中会包含基于当前请求参数的上一页地址、下一页地址和第一页地址，因此不需要手动组合这些地址。
 
