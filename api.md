@@ -62,7 +62,7 @@ client.execute(get, new FutureCallback<HttpResponse>() { /* ... */ })
 
 #### 返回
 
-```json
+```hjson
 {
   "data": {
     "type": "forums",
@@ -99,7 +99,7 @@ client.execute(get, new FutureCallback<HttpResponse>() { /* ... */ })
 
 仅需发送你想要改变的部分。
 
-```json
+```hjson
 {
   // 来自 https://论坛/admin#/basics
   "forum_title": "Flarum", // 论坛标题
@@ -163,7 +163,7 @@ GET /api/discussions?include=user&filter[q]=tag:activity&page[limit]=5&page[offs
 
 #### 返回
 
-```json
+```hjson
 {
   "links": {
     "first": "https://myforum.com/api/discussions", // 第一页地址
@@ -204,7 +204,7 @@ GET /api/discussions?include=user&filter[q]=tag:activity&page[limit]=5&page[offs
 
 #### 发送
 
-```json
+```hjson
 {
   "data": {
     "type": "discussions",
@@ -231,7 +231,7 @@ GET /api/discussions?include=user&filter[q]=tag:activity&page[limit]=5&page[offs
 
 #### 返回
 
-```json
+```hjson
 {
   "data": {
     "type": "discussions",
